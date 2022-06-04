@@ -64,8 +64,9 @@ optional arguments:
 jsp免杀还不会写，欢迎会写的师傅加我，一起开发项目
 网安交流群：184324009
 ```
-免杀视频：
-https://user-images.githubusercontent.com/79234113/171996715-376cc475-84bb-49ef-b7d6-6ceec8596699.mp4
+免杀：
+2022/6/4
+过安全狗，D盾，河马
 
 蚁剑使用：
 ![image](https://user-images.githubusercontent.com/79234113/171996878-0fadd6be-a4dd-4af3-b577-93787f946969.png)
