@@ -377,8 +377,8 @@ $p();
 
 
 if __name__ == "__main__":
-    name = f"{colored('webshell_bypass_php_4.2 by 弱鸡', 'green')}" \
-           "\n\n交流群：184324009"
+    name = colored('webshell_bypass_php_4.2 by 弱鸡', 'green')
+    name = name + "\n\n交流群：184324009\n\n\n\ngithub：https://github.com/ytMuCheng/ruoji"
     arg = ArgumentParser(description=name)
     arg.add_argument("-p",
                      "--php",
