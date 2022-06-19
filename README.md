@@ -76,7 +76,6 @@ jsp免杀还不会写，欢迎会写的师傅加我，一起开发项目
 交流群：
 网安交流群：655934283
 
-![image](https://user-images.githubusercontent.com/79234113/172007187-2a9cbbf6-401b-47f9-bff2-a2876293c671.png)
 ![image](https://user-images.githubusercontent.com/79234113/172007237-8a5b98e8-a7dd-4e37-8c68-2aca9c6d89bb.png)
 
 
