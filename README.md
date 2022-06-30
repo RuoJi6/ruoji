@@ -2,6 +2,25 @@
 
 自动生成webshell_php免杀脚本
 
+
+
+更新：
+
+4.1
+
+2022/6/4
+过安全狗，D盾，河马
+
+4.2
+
+修复了未知错误
+
+4.3
+
+添加了错误日志信息，过河马免杀，添加了严格的密码验证
+
+
+
 python3环境
 
 安装模块
@@ -62,20 +81,17 @@ optional arguments:
 ```
 后面还会陆续添加针对不同cms错误伪装
 jsp免杀还不会写，欢迎会写的师傅加我，一起开发项目
-网安交流群：184324009
+网安交流群：655934283
 ```
-免杀：
-2022/6/4
-过安全狗，D盾，河马
+
+
+
+
+
+
 
 蚁剑使用：
 ![image](https://user-images.githubusercontent.com/79234113/171996878-0fadd6be-a4dd-4af3-b577-93787f946969.png)
 ![image](https://user-images.githubusercontent.com/79234113/171996880-23a10823-ae93-40f2-9139-ee4cf54ca990.png)
 ![image](https://user-images.githubusercontent.com/79234113/171996918-5759f5c3-4523-4c64-bf7e-b5032b72f464.png)
-
-交流群：
-网安交流群：655934283
-
-![image](https://user-images.githubusercontent.com/79234113/172007237-8a5b98e8-a7dd-4e37-8c68-2aca9c6d89bb.png)
-
 
