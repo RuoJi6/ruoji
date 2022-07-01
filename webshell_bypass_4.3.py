@@ -51,7 +51,14 @@ def free_kill(php_name):
             php_name = php_name + '.php'
             print(colored('文件载入成功：', 'green'), colored(php_name, 'red'))
     php_names = php_name
-    php_name = '\\' + php_name
+    path = os.path.split(os.path.realpath(__file__))[0] #判断系统
+    path1 = path[0]
+    s = '/'
+    if path1 in s:
+        php_name = '/' + php_name
+    else:
+        php_name = '\\' + php_name
+
     lj = input('输入保存shell文件的绝对路径(直接回车就是当前脚本路径)：')
     if lj == '':
         lj = os.path.split(os.path.realpath(__file__))[0]
@@ -331,7 +338,7 @@ if __name__ == "__main__":
             |配置信息
             |默认生成shell文件路径：{path}
             |time：{current_time}
-            -------------------------------------------
+            |-------------------------------------------
             """)
             i = 1
         if php != None:
@@ -364,7 +371,7 @@ if __name__ == "__main__":
                 |配置信息
                 |默认生成shell文件路径：{path}
                 |time：{current_time}
-                -------------------------------------------
+                |-------------------------------------------
                 """)
             free_kill(php_name=php)
         if jsp != None:
