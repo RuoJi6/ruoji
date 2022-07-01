@@ -20,7 +20,8 @@
 添加了错误日志信息，过河马免杀，添加了严格的密码验证
 error 错误日志
 success 运行日志
-
+2022/7/1 修复了linux以及mac的路径错误问题
+感谢一位兄弟的提交的错误
 
 
 python3环境
@@ -47,6 +48,12 @@ optional arguments:
 
  ![image](https://user-images.githubusercontent.com/79234113/171996281-fd40e3b4-fd4b-4572-87e1-9460d59ad2f4.png)
 ![image](https://user-images.githubusercontent.com/79234113/171996323-430853ef-bb7a-494b-b3a1-fe6a1a4aeb9d.png)
+
+
+```
+linux使用
+```
+![image](https://user-images.githubusercontent.com/79234113/176859076-ade2a523-4b01-4e86-a128-52a751bf5128.png)
 
 ```
 使用默认的，就是当前py脚本路径下，也可以自定义
