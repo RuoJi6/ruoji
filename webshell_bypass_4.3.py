@@ -61,13 +61,13 @@ def free_kill(php_name):
 
     lj = input('输入保存shell文件的绝对路径(直接回车就是当前脚本路径)：')
     path1 = path[0]
-    lj1 = lj[0]
     l = '/'
     w = '\\'
     if lj == '':
         lj = os.path.split(os.path.realpath(__file__))[0]
         print(colored('路径载入成功：', 'green'), colored(lj, 'red'))
     else:
+        lj1 = lj[0]#获取第一个值
         if path1 in l:  # 判断系统
             if lj1 in l:  # 判断用户输入的值是否有/ linux
                 print(colored('路径载入成功：', 'green'), colored(lj, 'red'))
@@ -75,12 +75,18 @@ def free_kill(php_name):
                 lj = '/' + lj
                 print(colored('路径载入成功：', 'green'), colored(lj, 'red'))
         elif path1 in w:
-            if lj1 in l:  # 判断用户输入的值是否有\ windows
-                print(colored('路径载入成功：', 'green'), colored(lj, 'red'))
+            abc = ['a', 'b', 'c', 'd', 'e', 'f', 'A', 'B', 'C', 'D', 'E', 'F']
+            if path1 in abc:  # 判断用户输入的值是否有\ 盘符
+                print(colored('windows路径错误', 'red') + ',将使用默认路径')
+                lj = os.path.split(os.path.realpath(__file__))[0]
             else:
                 lj = os.path.split(os.path.realpath(__file__))[0]
                 print(colored('输入错误，讲使用默认路径: ', 'red'), lj)
-        else:
+        else:#判断windows是否输入了盘符
+            abc =['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z','A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+            if path1 in abc:
+                print(colored('windows路径错误', 'red') + ',将使用默认路径')
+                lj = os.path.split(os.path.realpath(__file__))[0]
             print(colored('路径载入成功：', 'green'), colored(lj, 'red'))
     lj_data = lj + php_name
     print(colored('路径拼接成功：', 'green'), colored(lj_data, 'red'))
@@ -284,7 +290,7 @@ error was encountered while trying to use an ErrorDocument to handle the request
             times = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
             k.write('time：' + str(times) + '\n')
             k.write('error：' + str(error) + '\n\n')
-            print(colored('发生未知错误: 文件名 or 文件类型错误', 'red'))
+            print(colored('发生未知错误: 文件名 or 文件类型错误 or 路径错误', 'red'))
         sys.exit()
     except Exception as error:
         with open('erroe.txt', 'a+', encoding='utf-8') as k:
