@@ -250,7 +250,9 @@ try:
             print('-----------------------------------------------------------------------------------')
             print('|', colored('key:', 'green'), '      |', colored(f'{keys}', 'red'))
             print('-----------------------------------------------------------------------------------')
-            print('|', colored('cookie:', 'green'), '   |', colored(f'{cookie_name}', 'red'))
+            print('|', colored('Cookie:', 'green'), '   |', colored(f'{cookie_name}', 'red'))
+            print('-----------------------------------------------------------------------------------')
+            print('|', colored('注意:', 'green'), '   |', colored('需要填写Cookie的，C需要大写，才行', 'red'))
             print('-----------------------------------------------------------------------------------')
             c.write('-------------------------- ruoji_webshell_bypass ------------------------------' + '\n')
             times = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
@@ -262,8 +264,8 @@ try:
             c.write(f'path:{lj_datas}' + '\n')
             c.write(f'get:{get_1}' + '\n')
             c.write(f'password:{passwords}' + '\n')
-            c.write(f'key:{keys}' + '\n\n')
-            c.write(f'cookie:{cookie_name}' + '\n')
+            c.write(f'key:{keys}' + '\n')
+            c.write(f'Cookie:{cookie_name}' + '\n\n')
 
 
     # 普通一句话
