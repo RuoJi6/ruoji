@@ -2,8 +2,7 @@
 
 自动生成webshell_php免杀脚本
 
-
-
+```
 更新：
 
 4.1
@@ -27,6 +26,12 @@ success 运行日志
 添加了代码逻辑，并且添加了@
 配合代码加密平台可以绕过云waf
 
+5.0
+添加了哥斯拉，冰蝎马免杀
+可以自定义变量名长度
+哥斯拉和普通一句话马，添加了cookie验证
+过常见waf
+```
 
 python3环境
 
@@ -37,8 +42,8 @@ pip install -r re.txt
 ```
 
 使用：
-python webshell_bypass_4.1.py
-![image](https://user-images.githubusercontent.com/79234113/171996206-52045242-e21f-4463-9ffe-ca9318667658.png)
+python webshell_bypass_5.0.py -c 1
+![image](https://user-images.githubusercontent.com/79234113/193225758-62377026-3a78-4601-9582-e05b81a58642.png)
 参数
 
 ```python
@@ -50,20 +55,15 @@ optional arguments:
                         查看配置 -c 1 or --config 1
 ```
 
- ![image](https://user-images.githubusercontent.com/79234113/171996281-fd40e3b4-fd4b-4572-87e1-9460d59ad2f4.png)
-![image](https://user-images.githubusercontent.com/79234113/171996323-430853ef-bb7a-494b-b3a1-fe6a1a4aeb9d.png)
+![image](https://user-images.githubusercontent.com/79234113/193223356-7a4e64e9-812b-4c32-bd95-4230a3b77044.png)
 
 
 ```
-linux使用
-```
-![image](https://user-images.githubusercontent.com/79234113/176859076-ade2a523-4b01-4e86-a128-52a751bf5128.png)
-
-```
+linux，mac和windows使用一样
 使用默认的，就是当前py脚本路径下，也可以自定义
 ```
 
-![image](https://user-images.githubusercontent.com/79234113/171996340-5e8f86fc-5816-4a7a-829a-e6f23660fda2.png)
+![image](https://user-images.githubusercontent.com/79234113/193223356-7a4e64e9-812b-4c32-bd95-4230a3b77044.png)
 
 ```
 关于伪装
@@ -91,20 +91,43 @@ linux使用
 ![image](https://user-images.githubusercontent.com/79234113/171996504-46c5c204-91a9-4f48-8c00-57e3180b7164.png)
 
 
+
+目录结构：
+```
+success.txt 为生成成功websyhell的信息
+error.txt 为错误信息
+template 文件为错误模板信息
+webshell_bypass_5.0.py 免杀生成模板
+```
+
+
+
+
+演示：
+![image](https://user-images.githubusercontent.com/79234113/193223918-fa4e9857-bea4-4b47-943a-8e17e95f798a.png)
+![image](https://user-images.githubusercontent.com/79234113/193223990-daefd0bb-cd8d-44f2-8d81-bebb4b31fc98.png)
+![image](https://user-images.githubusercontent.com/79234113/193224017-edcc82db-fa27-4f7e-8de1-7ac628635b09.png)
+![image](https://user-images.githubusercontent.com/79234113/193224058-363e57c2-7c57-4872-941e-ba4a034aa0d5.png)
+
+哥斯拉
+![image](https://user-images.githubusercontent.com/79234113/193224744-be77cc07-964c-4c15-b5b7-4674d1e1108c.png)
+![image](https://user-images.githubusercontent.com/79234113/193224816-d1cc1f99-afb5-41b3-92dc-3b690779b5ce.png)
+![image](https://user-images.githubusercontent.com/79234113/193225152-7140993c-9ae0-4c2a-9ced-5705a514a1b9.png)
+
+冰蝎
+![image](https://user-images.githubusercontent.com/79234113/193225423-baf0d469-9bd3-43ee-9967-a1cdb7dfd375.png)
+![image](https://user-images.githubusercontent.com/79234113/193225458-3e2d97c9-5013-435d-a8ac-ae9dcef7f952.png)
+
+免杀：
+![image](https://user-images.githubusercontent.com/79234113/193227286-b036c421-aa63-4370-8140-36c5dfc5018b.png)
+![image](https://user-images.githubusercontent.com/79234113/193227305-7de1f5fd-1fcc-4862-b1b6-bb9623df2160.png)
+![image](https://user-images.githubusercontent.com/79234113/193227431-8364ff49-821e-4fd2-a9bd-1ebaf36f3c41.png)
+
+
 ```
 后面还会陆续添加针对不同cms错误伪装
 jsp免杀还不会写，欢迎会写的师傅加我，一起开发项目
 网安交流群：655934283
 ```
 
-
-
-
-
-
-
-蚁剑使用：
-![image](https://user-images.githubusercontent.com/79234113/171996878-0fadd6be-a4dd-4af3-b577-93787f946969.png)
-![image](https://user-images.githubusercontent.com/79234113/171996880-23a10823-ae93-40f2-9139-ee4cf54ca990.png)
-![image](https://user-images.githubusercontent.com/79234113/171996918-5759f5c3-4523-4c64-bf7e-b5032b72f464.png)
 
