@@ -104,6 +104,8 @@ webshell_bypass_5.0.py 免杀生成模板
 
 
 演示：
+注意：Cookie验证的话，C需要大写
+蚁剑
 ![image](https://user-images.githubusercontent.com/79234113/193223918-fa4e9857-bea4-4b47-943a-8e17e95f798a.png)
 ![image](https://user-images.githubusercontent.com/79234113/193223990-daefd0bb-cd8d-44f2-8d81-bebb4b31fc98.png)
 ![image](https://user-images.githubusercontent.com/79234113/193224017-edcc82db-fa27-4f7e-8de1-7ac628635b09.png)
